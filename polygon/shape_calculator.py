@@ -6,6 +6,7 @@ class Rectangle:
   def __init__(self, width, height):
     self.width = width
     self.height = height
+    # print("building Rectangle", width, height)
   
   def __str__(self):
     #return(("Rectangle(width={0}, height={1})").format(self.width, self.height))
@@ -38,21 +39,32 @@ class Rectangle:
 
 class Square(Rectangle):
   def __init__(self, side):
-    Rectangle.width = side
-    Rectangle.height = side
+    #Rectangle.width = side
+    #Rectangle.height = side
+    #self.side = side
+    #print("building square", side)
+    super().__init__(side, side)
+    #super(Square, self).__init__(side, side)
 
   def __str__(self):
     return("Square(side=" + str(self.width) + ")")
 
   def set_side(self, side):
-    Rectangle.width = side
-    Rectangle.height = side
+    #print("set side sq", side)
+    super().set_width(side)
+    super().set_height(side)
+    #self.width = side
+    #self.height = side
 
   def set_width(self, side):
-    Rectangle.width = side
-    Rectangle.height = side
+    super().set_width(side)
+    super().set_height(side)
+    #  Rectangle.width = side
+  #  Rectangle.height = side
 
   def set_height(self, side):
-    Rectangle.width = side
-    Rectangle.height = side
+    super().set_width(side)
+    super().set_height(side)
+#    Rectangle.width = side
+#    Rectangle.height = side
     
